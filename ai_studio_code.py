@@ -1,0 +1,51 @@
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+# 1. تحديد الجهاز (CPU أو GPU)
+# يتم تفضيل استخدام CUDA/GPU لأن النموذج تم تحميله بـ bfloat16 و Flash Attention 2
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Using device: {device}")
+
+# 2. تحميل النموذج
+# يتم تحميل النموذج كما ورد في الكود الأصلي
+model_name = "facebook/opt-125m"
+model = AutoModelForCausalLM.from_pretrained(
+    model_name,
+    torch_dtype=torch.bfloat16,
+    attn_implementation="flash_attention_2"
+)
+
+# نقل النموذج إلى الجهاز المحدد
+model.to(device)
+
+# 3. تحميل الـ Tokenizer
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+# 4. تحديد نص الإدخال (Prompt)
+prompt = "what is opt?"
+print(f"\nInput Prompt: {prompt}")
+
+# 5. ترميز الإدخال (Tokenization)
+# يتم تحويل النص إلى tensors ونقله إلى الجهاز المحدد
+inputs = tokenizer(prompt, return_tensors="pt").to(device)
+
+# 6. توليد الإخراج (Inference/Generation)
+# استخدام طريقة .generate() لتوليد النص التالي
+output_tokens = model.generate(
+    **inputs,
+    max_length=50,  # الحد الأقصى لطول التسلسل الناتج
+    num_return_sequences=1,
+    do_sample=True, # تفعيل أخذ العينات (Sampling) لمزيد من التنوع
+    top_k=50,
+    top_p=0.95,
+    temperature=0.7,
+    pad_token_id=tokenizer.eos_token_id # تحديد pad_token_id لتجنب التحذيرات
+)
+
+# 7. فك ترميز الإخراج (Decoding)
+# تحويل الأرقام (tokens) إلى نص يمكن قراءته
+generated_text = tokenizer.decode(output_tokens[0], skip_special_tokens=True)
+
+# 8. طباعة النتيجة
+print("\nGenerated Text:")
+print(generated_text)

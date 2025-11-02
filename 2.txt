@@ -1,0 +1,787 @@
+الحمد لله
+
+اشتغل الفلاش اتنشن2
+
+
+cudatookit 12.8
+rtx5060ti16gb
+python 3.12
+
+
+
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip list
+Package                  Version
+------------------------ ------------
+anyio                    4.11.0
+certifi                  2025.10.5
+charset-normalizer       3.4.4
+click                    8.3.0
+einops                   0.8.1
+filelock                 3.19.1
+flash_attn               2.8.3
+fsspec                   2025.9.0
+h11                      0.16.0
+hf-xet                   1.2.0
+httpcore                 1.0.9
+httpx                    0.28.1
+huggingface-hub          1.0.0rc6
+idna                     3.11
+Jinja2                   3.1.6
+MarkupSafe               2.1.5
+mpmath                   1.3.0
+networkx                 3.5
+numpy                    2.3.3
+nvidia-cublas-cu12       12.8.3.14
+nvidia-cuda-cupti-cu12   12.8.57
+nvidia-cuda-nvrtc-cu12   12.8.61
+nvidia-cuda-runtime-cu12 12.8.57
+nvidia-cudnn-cu12        9.7.1.26
+nvidia-cufft-cu12        11.3.3.41
+nvidia-cufile-cu12       1.13.0.11
+nvidia-curand-cu12       10.3.9.55
+nvidia-cusolver-cu12     11.7.2.55
+nvidia-cusparse-cu12     12.5.7.53
+nvidia-cusparselt-cu12   0.6.3
+nvidia-nccl-cu12         2.26.2
+nvidia-nvjitlink-cu12    12.8.61
+nvidia-nvtx-cu12         12.8.55
+packaging                25.0
+pillow                   11.3.0
+pip                      24.0
+PyYAML                   6.0.3
+regex                    2025.10.23
+requests                 2.32.5
+safetensors              0.6.2
+setuptools               80.9.0
+sniffio                  1.3.1
+sympy                    1.14.0
+tokenizers               0.22.1
+torch                    2.7.1+cu128
+torchaudio               2.7.1+cu128
+torchvision              0.22.1+cu128
+tqdm                     4.67.1
+transformers             5.0.0.dev0
+triton                   3.3.1
+typer-slim               0.20.0
+typing_extensions        4.15.0
+urllib3                  2.5.0
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ 
+
+
+
+
+
+
+
+
+
+  217  python3.12 -m venv venv && source venv/bin/activate
+  218  pip install flash-attn --no-build-isolation
+  219  pip install setuptools
+  220  pip install flash-attn --no-build-isolation
+  221  pip install flash-attn
+  222  pip install flash-attn==2.8.3
+  223  pip3 install torch==2.7.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+  224  pip install flash-attn --no-build-isolation
+  225  pip install https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch2.7cxx11abiFALSE-cp312-cp312-linux_x86_64.whl
+  226  dir
+  227  pip install flash_attn-2.8.3+cu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl
+  228  python
+  229  pip install git+https://github.com/huggingface/transformers
+  230  python
+  231  dir
+  232  python ai_studio_code.py
+  233  pip list
+  234  history
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+m@m-HP-Z440-Workstation:~/Desktop/1$ python3.12 -m venv venv && source venv/bin/activate
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip install flash-attn --no-build-isolation
+Collecting flash-attn
+  Downloading flash_attn-2.8.3.tar.gz (8.4 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.4/8.4 MB 2.0 MB/s eta 0:00:00
+  Preparing metadata (pyproject.toml) ... done
+ERROR: Exception:
+Traceback (most recent call last):
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/cli/base_command.py", line 180, in exc_logging_wrapper
+    status = run_func(*args)
+             ^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/cli/req_command.py", line 245, in wrapper
+    return func(self, options, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/commands/install.py", line 377, in run
+    requirement_set = resolver.resolve(
+                      ^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/resolver.py", line 95, in resolve
+    result = self._result = resolver.resolve(
+                            ^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/resolvelib/resolvers.py", line 546, in resolve
+    state = resolution.resolve(requirements, max_rounds=max_rounds)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/resolvelib/resolvers.py", line 397, in resolve
+    self._add_to_criteria(self.state.criteria, r, parent=None)
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/resolvelib/resolvers.py", line 173, in _add_to_criteria
+    if not criterion.candidates:
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/resolvelib/structs.py", line 156, in __bool__
+    return bool(self._sequence)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 155, in __bool__
+    return any(self)
+           ^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 143, in <genexpr>
+    return (c for c in iterator if id(c) not in self._incompatible_ids)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/found_candidates.py", line 47, in _iter_built
+    candidate = func()
+                ^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 182, in _make_candidate_from_link
+    base: Optional[BaseCandidate] = self._make_base_candidate_from_link(
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/factory.py", line 228, in _make_base_candidate_from_link
+    self._link_candidate_cache[link] = LinkCandidate(
+                                       ^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 290, in __init__
+    super().__init__(
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 156, in __init__
+    self.dist = self._prepare()
+                ^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 222, in _prepare
+    dist = self._prepare_distribution()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/resolution/resolvelib/candidates.py", line 301, in _prepare_distribution
+    return preparer.prepare_linked_requirement(self._ireq, parallel_builds=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 525, in prepare_linked_requirement
+    return self._prepare_linked_requirement(req, parallel_builds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 640, in _prepare_linked_requirement
+    dist = _get_prepared_distribution(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/operations/prepare.py", line 71, in _get_prepared_distribution
+    abstract_dist.prepare_distribution_metadata(
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/distributions/sdist.py", line 67, in prepare_distribution_metadata
+    self.req.prepare_metadata()
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/req/req_install.py", line 579, in prepare_metadata
+    self.metadata_directory = generate_metadata(
+                              ^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/operations/build/metadata.py", line 35, in generate_metadata
+    distinfo_dir = backend.prepare_metadata_for_build_wheel(metadata_dir)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_internal/utils/misc.py", line 766, in prepare_metadata_for_build_wheel
+    return super().prepare_metadata_for_build_wheel(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_impl.py", line 186, in prepare_metadata_for_build_wheel
+    return self._call_hook('prepare_metadata_for_build_wheel', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_impl.py", line 321, in _call_hook
+    raise BackendUnavailable(data.get('traceback', ''))
+pip._vendor.pyproject_hooks._impl.BackendUnavailable: Traceback (most recent call last):
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 77, in _build_backend
+    obj = import_module(mod_path)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'setuptools'
+
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip install setuptools
+Collecting setuptools
+  Using cached setuptools-80.9.0-py3-none-any.whl.metadata (6.6 kB)
+Using cached setuptools-80.9.0-py3-none-any.whl (1.2 MB)
+Installing collected packages: setuptools
+Successfully installed setuptools-80.9.0
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip install flash-attn --no-build-isolation
+Collecting flash-attn
+  Using cached flash_attn-2.8.3.tar.gz (8.4 MB)
+  Preparing metadata (pyproject.toml) ... error
+  error: subprocess-exited-with-error
+  
+  × Preparing metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [17 lines of output]
+      Traceback (most recent call last):
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 149, in prepare_metadata_for_build_wheel
+          return hook(metadata_directory, config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/build_meta.py", line 374, in prepare_metadata_for_build_wheel
+          self.run_setup()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/build_meta.py", line 512, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 22, in <module>
+      ModuleNotFoundError: No module named 'torch'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip install flash-attn
+Collecting flash-attn
+  Using cached flash_attn-2.8.3.tar.gz (8.4 MB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... error
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [20 lines of output]
+      Traceback (most recent call last):
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+          return hook(config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-21fqdu2b/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 331, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-21fqdu2b/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+        File "/tmp/pip-build-env-21fqdu2b/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 512, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "/tmp/pip-build-env-21fqdu2b/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 22, in <module>
+      ModuleNotFoundError: No module named 'torch'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip install flash-attn==2.8.3
+Collecting flash-attn==2.8.3
+  Using cached flash_attn-2.8.3.tar.gz (8.4 MB)
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... error
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build wheel did not run successfully.
+  │ exit code: 1
+  ╰─> [20 lines of output]
+      Traceback (most recent call last):
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 118, in get_requires_for_build_wheel
+          return hook(config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-_m287ee8/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 331, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-_m287ee8/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+        File "/tmp/pip-build-env-_m287ee8/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 512, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "/tmp/pip-build-env-_m287ee8/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 22, in <module>
+      ModuleNotFoundError: No module named 'torch'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+× Getting requirements to build wheel did not run successfully.
+│ exit code: 1
+╰─> See above for output.
+
+note: This error originates from a subprocess, and is likely not a problem with pip.
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip3 install torch==2.7.1 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+Looking in indexes: https://download.pytorch.org/whl/cu128
+Collecting torch==2.7.1
+  Using cached https://download.pytorch.org/whl/cu128/torch-2.7.1%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (29 kB)
+Collecting torchvision
+  Using cached https://download.pytorch.org/whl/cu128/torchvision-0.24.0%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (5.9 kB)
+Collecting torchaudio
+  Using cached https://download.pytorch.org/whl/cu128/torchaudio-2.9.0%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.9 kB)
+Collecting filelock (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/filelock-3.19.1-py3-none-any.whl.metadata (2.1 kB)
+Collecting typing-extensions>=4.10.0 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/typing_extensions-4.15.0-py3-none-any.whl.metadata (3.3 kB)
+Requirement already satisfied: setuptools in ./venv/lib/python3.12/site-packages (from torch==2.7.1) (80.9.0)
+Collecting sympy>=1.13.3 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting networkx (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/networkx-3.5-py3-none-any.whl.metadata (6.3 kB)
+Collecting jinja2 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/fsspec-2025.9.0-py3-none-any.whl.metadata (10 kB)
+Collecting nvidia-cuda-nvrtc-cu12==12.8.61 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_cuda_nvrtc_cu12-12.8.61-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime-cu12==12.8.57 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_cuda_runtime_cu12-12.8.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti-cu12==12.8.57 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_cuda_cupti_cu12-12.8.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cudnn-cu12==9.7.1.26 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_cudnn_cu12-9.7.1.26-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cublas-cu12==12.8.3.14 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_cublas_cu12-12.8.3.14-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft-cu12==11.3.3.41 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_cufft_cu12-11.3.3.41-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-curand-cu12==10.3.9.55 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_curand_cu12-10.3.9.55-py3-none-manylinux_2_27_x86_64.whl.metadata (1.5 kB)
+Collecting nvidia-cusolver-cu12==11.7.2.55 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_cusolver_cu12-11.7.2.55-py3-none-manylinux_2_27_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cusparse-cu12==12.5.7.53 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_cusparse_cu12-12.5.7.53-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-cusparselt-cu12==0.6.3 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/nvidia_cusparselt_cu12-0.6.3-py3-none-manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting nvidia-nccl-cu12==2.26.2 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_nccl_cu12-2.26.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.0 kB)
+Collecting nvidia-nvtx-cu12==12.8.55 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_nvtx_cu12-12.8.55-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.6 kB)
+Collecting nvidia-nvjitlink-cu12==12.8.61 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_nvjitlink_cu12-12.8.61-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufile-cu12==1.13.0.11 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/cu128/nvidia_cufile_cu12-1.13.0.11-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.5 kB)
+Collecting triton==3.3.1 (from torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/triton-3.3.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (1.5 kB)
+Collecting numpy (from torchvision)
+  Using cached https://download.pytorch.org/whl/numpy-2.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+INFO: pip is looking at multiple versions of torchvision to determine which version is compatible with other requirements. This could take a while.
+Collecting torchvision
+  Using cached https://download.pytorch.org/whl/cu128/torchvision-0.23.0%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+  Using cached https://download.pytorch.org/whl/cu128/torchvision-0.22.1%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.1 kB)
+Collecting pillow!=8.3.*,>=5.3.0 (from torchvision)
+  Using cached https://download.pytorch.org/whl/pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+INFO: pip is looking at multiple versions of torchaudio to determine which version is compatible with other requirements. This could take a while.
+Collecting torchaudio
+  Using cached https://download.pytorch.org/whl/cu128/torchaudio-2.8.0%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (7.2 kB)
+  Using cached https://download.pytorch.org/whl/cu128/torchaudio-2.7.1%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/mpmath-1.3.0-py3-none-any.whl (536 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch==2.7.1)
+  Using cached https://download.pytorch.org/whl/MarkupSafe-2.1.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (28 kB)
+Using cached https://download.pytorch.org/whl/cu128/torch-2.7.1%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl (1039.2 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_cublas_cu12-12.8.3.14-py3-none-manylinux_2_27_x86_64.whl (609.6 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_cuda_cupti_cu12-12.8.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (10.2 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_cuda_nvrtc_cu12-12.8.61-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (88.0 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_cuda_runtime_cu12-12.8.57-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (954 kB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_cudnn_cu12-9.7.1.26-py3-none-manylinux_2_27_x86_64.whl (726.9 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_cufft_cu12-11.3.3.41-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (193.1 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_cufile_cu12-1.13.0.11-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_curand_cu12-10.3.9.55-py3-none-manylinux_2_27_x86_64.whl (63.6 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_cusolver_cu12-11.7.2.55-py3-none-manylinux_2_27_x86_64.whl (260.4 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_cusparse_cu12-12.5.7.53-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (292.1 MB)
+Using cached https://download.pytorch.org/whl/nvidia_cusparselt_cu12-0.6.3-py3-none-manylinux2014_x86_64.whl (156.8 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_nccl_cu12-2.26.2-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (201.3 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_nvjitlink_cu12-12.8.61-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (39.2 MB)
+Using cached https://download.pytorch.org/whl/cu128/nvidia_nvtx_cu12-12.8.55-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (89 kB)
+Using cached https://download.pytorch.org/whl/triton-3.3.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (155.7 MB)
+Using cached https://download.pytorch.org/whl/cu128/torchvision-0.22.1%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl (8.7 MB)
+Using cached https://download.pytorch.org/whl/cu128/torchaudio-2.7.1%2Bcu128-cp312-cp312-manylinux_2_28_x86_64.whl (3.9 MB)
+Using cached https://download.pytorch.org/whl/pillow-11.3.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.6 MB)
+Using cached https://download.pytorch.org/whl/sympy-1.14.0-py3-none-any.whl (6.3 MB)
+Using cached https://download.pytorch.org/whl/typing_extensions-4.15.0-py3-none-any.whl (44 kB)
+Using cached https://download.pytorch.org/whl/filelock-3.19.1-py3-none-any.whl (15 kB)
+Using cached https://download.pytorch.org/whl/fsspec-2025.9.0-py3-none-any.whl (199 kB)
+Using cached https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached https://download.pytorch.org/whl/networkx-3.5-py3-none-any.whl (2.0 MB)
+Using cached https://download.pytorch.org/whl/numpy-2.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+Installing collected packages: nvidia-cusparselt-cu12, mpmath, typing-extensions, triton, sympy, pillow, nvidia-nvtx-cu12, nvidia-nvjitlink-cu12, nvidia-nccl-cu12, nvidia-curand-cu12, nvidia-cufile-cu12, nvidia-cuda-runtime-cu12, nvidia-cuda-nvrtc-cu12, nvidia-cuda-cupti-cu12, nvidia-cublas-cu12, numpy, networkx, MarkupSafe, fsspec, filelock, nvidia-cusparse-cu12, nvidia-cufft-cu12, nvidia-cudnn-cu12, jinja2, nvidia-cusolver-cu12, torch, torchvision, torchaudio
+Successfully installed MarkupSafe-2.1.5 filelock-3.19.1 fsspec-2025.9.0 jinja2-3.1.6 mpmath-1.3.0 networkx-3.5 numpy-2.3.3 nvidia-cublas-cu12-12.8.3.14 nvidia-cuda-cupti-cu12-12.8.57 nvidia-cuda-nvrtc-cu12-12.8.61 nvidia-cuda-runtime-cu12-12.8.57 nvidia-cudnn-cu12-9.7.1.26 nvidia-cufft-cu12-11.3.3.41 nvidia-cufile-cu12-1.13.0.11 nvidia-curand-cu12-10.3.9.55 nvidia-cusolver-cu12-11.7.2.55 nvidia-cusparse-cu12-12.5.7.53 nvidia-cusparselt-cu12-0.6.3 nvidia-nccl-cu12-2.26.2 nvidia-nvjitlink-cu12-12.8.61 nvidia-nvtx-cu12-12.8.55 pillow-11.3.0 sympy-1.14.0 torch-2.7.1+cu128 torchaudio-2.7.1+cu128 torchvision-0.22.1+cu128 triton-3.3.1 typing-extensions-4.15.0
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip install flash-attn --no-build-isolation
+Collecting flash-attn
+  Using cached flash_attn-2.8.3.tar.gz (8.4 MB)
+  Preparing metadata (pyproject.toml) ... error
+  error: subprocess-exited-with-error
+  
+  × Preparing metadata (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [80 lines of output]
+      /home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+      !!
+      
+              ********************************************************************************
+              Please consider removing the following classifiers in favor of a SPDX license expression:
+      
+              License :: OSI Approved :: BSD License
+      
+              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+              ********************************************************************************
+      
+      !!
+        self._finalize_license_expression()
+      
+      
+      torch.__version__  = 2.7.1+cu128
+      
+      
+      running dist_info
+      creating /tmp/pip-modern-metadata-hd1864tg/flash_attn.egg-info
+      writing /tmp/pip-modern-metadata-hd1864tg/flash_attn.egg-info/PKG-INFO
+      writing dependency_links to /tmp/pip-modern-metadata-hd1864tg/flash_attn.egg-info/dependency_links.txt
+      writing requirements to /tmp/pip-modern-metadata-hd1864tg/flash_attn.egg-info/requires.txt
+      writing top-level names to /tmp/pip-modern-metadata-hd1864tg/flash_attn.egg-info/top_level.txt
+      writing manifest file '/tmp/pip-modern-metadata-hd1864tg/flash_attn.egg-info/SOURCES.txt'
+      Traceback (most recent call last):
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+          main()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 149, in prepare_metadata_for_build_wheel
+          return hook(metadata_directory, config_settings)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/build_meta.py", line 374, in prepare_metadata_for_build_wheel
+          self.run_setup()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/build_meta.py", line 512, in run_setup
+          super().run_setup(setup_script=setup_script)
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())
+        File "<string>", line 526, in <module>
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/__init__.py", line 115, in setup
+          return distutils.core.setup(**attrs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/_distutils/core.py", line 186, in setup
+          return run_commands(dist)
+                 ^^^^^^^^^^^^^^^^^^
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/_distutils/core.py", line 202, in run_commands
+          dist.run_commands()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 1002, in run_commands
+          self.run_command(cmd)
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/dist.py", line 1102, in run_command
+          super().run_command(command)
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+          cmd_obj.run()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/command/dist_info.py", line 94, in run
+          self.egg_info.run()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/command/egg_info.py", line 312, in run
+          self.find_sources()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/command/egg_info.py", line 320, in find_sources
+          mm.run()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/command/egg_info.py", line 543, in run
+          self.add_defaults()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/command/egg_info.py", line 581, in add_defaults
+          sdist.add_defaults(self)
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/command/sdist.py", line 109, in add_defaults
+          super().add_defaults()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/_distutils/command/sdist.py", line 245, in add_defaults
+          self._add_defaults_ext()
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/_distutils/command/sdist.py", line 329, in _add_defaults_ext
+          build_ext = self.get_finalized_command('build_ext')
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/_distutils/cmd.py", line 333, in get_finalized_command
+          cmd_obj = self.distribution.get_command_obj(command, create)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 885, in get_command_obj
+          cmd_obj = self.command_obj[command] = klass(self)
+                                                ^^^^^^^^^^^
+        File "<string>", line 510, in __init__
+      ModuleNotFoundError: No module named 'psutil'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: metadata-generation-failed
+
+× Encountered error while generating package metadata.
+╰─> See above for output.
+
+note: This is an issue with the package mentioned above, not pip.
+hint: See above for details.
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip install https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch2.7cxx11abiFALSE-cp312-cp312-linux_x86_64.whl
+Collecting flash-attn==2.8.3+cu12torch2.7cxx11abiFALSE
+  Downloading https://github.com/Dao-AILab/flash-attention/releases/download/v2.8.3/flash_attn-2.8.3+cu12torch2.7cxx11abiFALSE-cp312-cp312-linux_x86_64.whl (256.0 MB)
+     ━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 26.1/256.0 MB 3.5 MB/s eta 0:01:05
+ERROR: Operation cancelled by user
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ ^C
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ dir
+1.txt  flash_attn-2.8.3+cu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl  venv
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip install flash_attn-2.8.3+cu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl
+Processing ./flash_attn-2.8.3+cu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl
+Requirement already satisfied: torch in ./venv/lib/python3.12/site-packages (from flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (2.7.1+cu128)
+Collecting einops (from flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE)
+  Using cached einops-0.8.1-py3-none-any.whl.metadata (13 kB)
+Requirement already satisfied: filelock in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (3.19.1)
+Requirement already satisfied: typing-extensions>=4.10.0 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (4.15.0)
+Requirement already satisfied: setuptools in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (80.9.0)
+Requirement already satisfied: sympy>=1.13.3 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (1.14.0)
+Requirement already satisfied: networkx in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (3.5)
+Requirement already satisfied: jinja2 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (3.1.6)
+Requirement already satisfied: fsspec in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (2025.9.0)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.61 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (12.8.61)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.57 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (12.8.57)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.57 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (12.8.57)
+Requirement already satisfied: nvidia-cudnn-cu12==9.7.1.26 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (9.7.1.26)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.3.14 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (12.8.3.14)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.41 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (11.3.3.41)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.55 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (10.3.9.55)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.2.55 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (11.7.2.55)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.7.53 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (12.5.7.53)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.6.3 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (0.6.3)
+Requirement already satisfied: nvidia-nccl-cu12==2.26.2 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (2.26.2)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.55 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (12.8.55)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.61 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (12.8.61)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.0.11 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (1.13.0.11)
+Requirement already satisfied: triton==3.3.1 in ./venv/lib/python3.12/site-packages (from torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (3.3.1)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in ./venv/lib/python3.12/site-packages (from sympy>=1.13.3->torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in ./venv/lib/python3.12/site-packages (from jinja2->torch->flash-attn==2.8.3+cu12torch2.7cxx11abiTRUE) (2.1.5)
+Using cached einops-0.8.1-py3-none-any.whl (64 kB)
+Installing collected packages: einops, flash-attn
+Successfully installed einops-0.8.1 flash-attn-2.8.3
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ python
+Python 3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> from transformers import AutoModelForCausalLM
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ModuleNotFoundError: No module named 'transformers'
+>>> import torch
+>>> model = AutoModelForCausalLM.from_pretrained("facebook/opt-125m", device_map="auto", dtype=torch.bfloat16, attn_implementation="flash_attention_2")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'AutoModelForCausalLM' is not defined
+>>> exit()
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ pip install git+https://github.com/huggingface/transformers
+Collecting git+https://github.com/huggingface/transformers
+  Cloning https://github.com/huggingface/transformers to /tmp/pip-req-build-_wxnqts7
+  Running command git clone --filter=blob:none --quiet https://github.com/huggingface/transformers /tmp/pip-req-build-_wxnqts7
+  Resolved https://github.com/huggingface/transformers to commit a0bf5a82eebf88ee9f52145be427f6f1541329f6
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+  Preparing metadata (pyproject.toml) ... done
+Requirement already satisfied: filelock in ./venv/lib/python3.12/site-packages (from transformers==5.0.0.dev0) (3.19.1)
+Collecting huggingface-hub==1.0.0.rc6 (from transformers==5.0.0.dev0)
+  Downloading huggingface_hub-1.0.0rc6-py3-none-any.whl.metadata (14 kB)
+Requirement already satisfied: numpy>=1.17 in ./venv/lib/python3.12/site-packages (from transformers==5.0.0.dev0) (2.3.3)
+Collecting packaging>=20.0 (from transformers==5.0.0.dev0)
+  Using cached packaging-25.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting pyyaml>=5.1 (from transformers==5.0.0.dev0)
+  Using cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting regex!=2019.12.17 (from transformers==5.0.0.dev0)
+  Using cached regex-2025.10.23-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Collecting requests (from transformers==5.0.0.dev0)
+  Using cached requests-2.32.5-py3-none-any.whl.metadata (4.9 kB)
+Collecting tokenizers<=0.23.0,>=0.22.0 (from transformers==5.0.0.dev0)
+  Downloading tokenizers-0.22.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.8 kB)
+Collecting typer-slim (from transformers==5.0.0.dev0)
+  Using cached typer_slim-0.20.0-py3-none-any.whl.metadata (16 kB)
+Collecting safetensors>=0.4.3 (from transformers==5.0.0.dev0)
+  Using cached safetensors-0.6.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+Collecting tqdm>=4.27 (from transformers==5.0.0.dev0)
+  Using cached tqdm-4.67.1-py3-none-any.whl.metadata (57 kB)
+Requirement already satisfied: fsspec>=2023.5.0 in ./venv/lib/python3.12/site-packages (from huggingface-hub==1.0.0.rc6->transformers==5.0.0.dev0) (2025.9.0)
+Collecting httpx<1,>=0.23.0 (from huggingface-hub==1.0.0.rc6->transformers==5.0.0.dev0)
+  Using cached httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in ./venv/lib/python3.12/site-packages (from huggingface-hub==1.0.0.rc6->transformers==5.0.0.dev0) (4.15.0)
+Collecting hf-xet<2.0.0,>=1.1.3 (from huggingface-hub==1.0.0.rc6->transformers==5.0.0.dev0)
+  Using cached hf_xet-1.2.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.9 kB)
+Collecting charset_normalizer<4,>=2 (from requests->transformers==5.0.0.dev0)
+  Using cached charset_normalizer-3.4.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (37 kB)
+Collecting idna<4,>=2.5 (from requests->transformers==5.0.0.dev0)
+  Using cached idna-3.11-py3-none-any.whl.metadata (8.4 kB)
+Collecting urllib3<3,>=1.21.1 (from requests->transformers==5.0.0.dev0)
+  Using cached urllib3-2.5.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting certifi>=2017.4.17 (from requests->transformers==5.0.0.dev0)
+  Using cached certifi-2025.10.5-py3-none-any.whl.metadata (2.5 kB)
+Collecting click>=8.0.0 (from typer-slim->transformers==5.0.0.dev0)
+  Using cached click-8.3.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting anyio (from httpx<1,>=0.23.0->huggingface-hub==1.0.0.rc6->transformers==5.0.0.dev0)
+  Using cached anyio-4.11.0-py3-none-any.whl.metadata (4.1 kB)
+Collecting httpcore==1.* (from httpx<1,>=0.23.0->huggingface-hub==1.0.0.rc6->transformers==5.0.0.dev0)
+  Using cached httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx<1,>=0.23.0->huggingface-hub==1.0.0.rc6->transformers==5.0.0.dev0)
+  Using cached h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting sniffio>=1.1 (from anyio->httpx<1,>=0.23.0->huggingface-hub==1.0.0.rc6->transformers==5.0.0.dev0)
+  Using cached sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+Downloading huggingface_hub-1.0.0rc6-py3-none-any.whl (502 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 502.0/502.0 kB 2.6 MB/s eta 0:00:00
+Using cached packaging-25.0-py3-none-any.whl (66 kB)
+Using cached pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+Using cached regex-2025.10.23-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (803 kB)
+Using cached safetensors-0.6.2-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (485 kB)
+Downloading tokenizers-0.22.1-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 3.8 MB/s eta 0:00:00
+Using cached tqdm-4.67.1-py3-none-any.whl (78 kB)
+Using cached requests-2.32.5-py3-none-any.whl (64 kB)
+Using cached typer_slim-0.20.0-py3-none-any.whl (47 kB)
+Using cached certifi-2025.10.5-py3-none-any.whl (163 kB)
+Using cached charset_normalizer-3.4.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (153 kB)
+Using cached click-8.3.0-py3-none-any.whl (107 kB)
+Using cached hf_xet-1.2.0-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+Using cached httpx-0.28.1-py3-none-any.whl (73 kB)
+Using cached httpcore-1.0.9-py3-none-any.whl (78 kB)
+Using cached idna-3.11-py3-none-any.whl (71 kB)
+Using cached urllib3-2.5.0-py3-none-any.whl (129 kB)
+Using cached anyio-4.11.0-py3-none-any.whl (109 kB)
+Using cached h11-0.16.0-py3-none-any.whl (37 kB)
+Using cached sniffio-1.3.1-py3-none-any.whl (10 kB)
+Building wheels for collected packages: transformers
+  Building wheel for transformers (pyproject.toml) ... done
+  Created wheel for transformers: filename=transformers-5.0.0.dev0-py3-none-any.whl size=11349345 sha256=4a85207ee8adae1e2647ec259ddc0ae03de5717001031e5c8a6cefe2892d77ac
+  Stored in directory: /tmp/pip-ephem-wheel-cache-ian6pjq4/wheels/49/a7/50/c9fdabbf10e51bb1256adb0c1a587fedd7184f5bad28d47fe3
+Successfully built transformers
+Installing collected packages: urllib3, tqdm, sniffio, safetensors, regex, pyyaml, packaging, idna, hf-xet, h11, click, charset_normalizer, certifi, typer-slim, requests, httpcore, anyio, httpx, huggingface-hub, tokenizers, transformers
+Successfully installed anyio-4.11.0 certifi-2025.10.5 charset_normalizer-3.4.4 click-8.3.0 h11-0.16.0 hf-xet-1.2.0 httpcore-1.0.9 httpx-0.28.1 huggingface-hub-1.0.0rc6 idna-3.11 packaging-25.0 pyyaml-6.0.3 regex-2025.10.23 requests-2.32.5 safetensors-0.6.2 sniffio-1.3.1 tokenizers-0.22.1 tqdm-4.67.1 transformers-5.0.0.dev0 typer-slim-0.20.0 urllib3-2.5.0
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ python
+Python 3.12.3 (main, Aug 14 2025, 17:47:21) [GCC 13.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> from transformers import AutoModelForCausalLM
+
+>>> import torch
+>>> model = AutoModelForCausalLM.from_pretrained("facebook/opt-125m", device_map="auto", dtype=torch.bfloat16, attn_implementation="flash_attention_2")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 372, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/transformers/modeling_utils.py", line 270, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/transformers/modeling_utils.py", line 4361, in from_pretrained
+    device_map = check_and_set_device_map(device_map)  # warn, error and fix the device map
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/transformers/integrations/accelerate.py", line 253, in check_and_set_device_map
+    raise ValueError(
+ValueError: Using a `device_map`, `tp_plan`, `torch.device` context manager or setting `torch.set_default_device(device)` requires `accelerate`. You can install it with `pip install accelerate`
+>>> pip install accelerate
+  File "<stdin>", line 1
+    pip install accelerate
+        ^^^^^^^
+SyntaxError: invalid syntax
+>>> model = AutoModelForCausalLM.from_pretrained("facebook/opt-125m", dtype=torch.bfloat16, attn_implementation="flash_attention_2")
+model.safetensors: 100%|█████████████████████████████████████████████████████████████| 251M/251M [03:15<00:00, 1.28MB/s]
+
+>>> exit()
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ dir
+1.txt  ai_studio_code.py  flash_attn-2.8.3+cu12torch2.7cxx11abiTRUE-cp312-cp312-linux_x86_64.whl  venv
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ python ai_studio_code.py
+Using device: cuda
+`torch_dtype` is deprecated! Use `dtype` instead!
+Traceback (most recent call last):
+  File "/home/m/Desktop/1/ai_studio_code.py", line 22, in <module>
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/transformers/models/auto/tokenization_auto.py", line 1137, in from_pretrained
+    return tokenizer_class_fast.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2149, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/m/Desktop/1/venv/lib/python3.12/site-packages/transformers/tokenization_utils_base.py", line 2377, in _from_pretrained
+    added_tokens = tokenizer_file_handle.pop("added_tokens")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'added_tokens'
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ python ai_studio_code.py
+Using device: cuda
+config.json: 100%|█████████████████████████████████████████████████████████████████████| 651/651 [00:00<00:00, 1.41MB/s]
+`torch_dtype` is deprecated! Use `dtype` instead!
+pytorch_model.bin: 100%|█████████████████████████████████████████████████████████████| 251M/251M [01:11<00:00, 3.49MB/s]
+generation_config.json: 100%|███████████████████████████████████████████████████████████| 137/137 [00:00<00:00, 383kB/s]
+tokenizer_config.json: 100%|███████████████████████████████████████████████████████████| 685/685 [00:00<00:00, 3.58MB/s]
+vocab.json: 899kB [00:00, 3.58MB/s]                                                           | 0.00/685 [00:00<?, ?B/s]
+merges.txt: 456kB [00:00, 2.22MB/s]
+special_tokens_map.json: 100%|█████████████████████████████████████████████████████████| 441/441 [00:00<00:00, 1.14MB/s]
+model.safetensors:   1%|▎                                                            | 1.42M/251M [00:03<09:44, 426kB/s]
+Input Prompt: The quick brown fox jumps over
+
+Generated Text:
+The quick brown fox jumps over the top of the truck and cuts off the tail lights.  The truck is now going faster than the light but the reds are still in the truck.
+He's running a red light so he can get
+model.safetensors: 100%|█████████████████████████████████████████████████████████████| 251M/251M [01:11<00:00, 3.48MB/s]
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ ^C
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ python ai_studio_code.py
+Using device: cuda
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+Input Prompt: what is opt?
+
+Generated Text:
+what is opt?
+Optimization.
+(venv) m@m-HP-Z440-Workstation:~/Desktop/1$ 
+
